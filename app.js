@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const fs = require("fs");
+const port = process.env.PORT || 8080;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 
@@ -35,6 +36,6 @@ app.get('/about', (req, res) => {
 
 	});
 });
-app.listen(8080, () => {
-	console.log("server running at port 8080 ...")
+app.listen(port, () => {
+	console.log(`server running at port ${port} ...`);
 })
